@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=0.5, maximum-scale=0.5">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<title>Store</title>
+	
+<style>
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+/*	background:url("_img/shop-bg@2x.jpg") no-repeat center center fixed;*/ 
+	background:url("_img/_layout.jpg");
+	-webkit-background-size: cover;
+	line-height: 1;
+	color:#fff;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/**/
+h1 {font-size: 3em; margin: 20px 0;}
+.container { 
+	
+}
+ul.tabs {
+	margin: 0;
+	padding: 0;
+	float: right;
+	list-style: none;
+}
+ul.tabs li {
+	float: left;
+	margin-right:10px;
+	padding: 0;
+	width:100px;
+	height:110px;
+	
+	overflow: hidden;
+	position: relative;
+	
+
+}
+ul.tabs li.animals{
+	background:url("_img/shop-icon-animals@2x.png");
+}
+ul.tabs li.decor{
+	background:url("_img/shop-icon-decor@2x.png");
+}
+ul.tabs li.islands{
+	background:url("_img/shop-icon-islands@2x.png");
+}
+ul.tabs li.special{
+	background:url("_img/shop-icon-special@2x.png");
+}
+ul.tabs li.back{
+	background:url("_img/shop-icon-back@2x.png");
+	float: left;
+	margin:0px;
+	padding: 0;
+	width:78px;
+	height:110px;
+	
+	overflow: hidden;
+	position: relative;
+}
+ul.tabs li a {
+	text-decoration: none;
+	color: #000;
+	display: block;
+	font-size: 1.2em;
+	padding: 0 10px;
+	outline: none;
+}
+html ul.tabs li.active, html ul.tabs li.active {
+	background-color: rgba(255,255,255,0.5);
+	-webkit-border-radius: 8px;
+	
+}
+.store-container {
+	clear: both;
+	float: left; 
+	width: 100%;
+}
+.store-content {
+	padding: 10px;
+	font-size: 1.2em;
+}
+.store-content h2 {
+	font-weight: normal;
+	padding-bottom: 10px;
+
+	font-size: 1.8em;
+}
+.store-content h3 a{
+	color: #254588;
+}
+
+/**/
+@font-face {
+    font-family: 'Motter';
+    src: url('_fonts/motter/mottercorpusstd-regular-webfont.eot');
+    src: url('_fonts/motter/mottercorpusstd-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('_fonts/motter/mottercorpusstd-regular-webfont.woff') format('woff'),
+         url('_fonts/motter/mottercorpusstd-regular-webfont.ttf') format('truetype'),
+         url('_fonts/motter/mottercorpusstd-regular-webfont.svg#MotterCorpusStdRegular') format('svg');
+    font-weigh_fonts/t: normal;
+    font-style: normal;
+
+}
+
+
+
+/**/
+#header{
+	width:100%;
+	height:100px;
+/*	background-color:rgba(50,50,50,0.5);*/
+}
+#shop-ui-panel-left{
+	float:left;
+	font-family:"motter";
+	color: white;
+	font-size:24px;
+	letter-spacing:0.0em;
+	text-align:center;
+	text-shadow:
+	   -2px -2px 0 #000,
+	    2px -2px 0 #000,
+	   -2px  2px 0 #000,
+	    2px  2px 0 #000,
+	   -1px -2px 0 #000,
+	    1px -2px 0 #000,
+	   -1px  2px 0 #000,
+	    1px  2px 0 #000,
+	   -2px -1px 0 #000,
+	    2px -1px 0 #000,
+	   -2px  1px 0 #000,
+	    2px  1px 0 #000;
+	background:url("_img/shop-ui-panel-left@2x.png");
+	width:280px;
+	height:50px;
+	margin-top:25px;
+	margin-left:15px;
+	
+}
+div.username{
+	margin-top:12px;
+}
+/*
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+
+	#banner-ipad{display:none;}
+}
+@media only screen and (device-width: 768px) {
+	#banner-iphone{display:none;}
+}
+
+	#banner-iphone{
+		background:black;
+		width:320px;
+		height:50px;
+		float:right;
+	}	
+	#banner-ipad{
+		background:white;
+		height:90px;
+		width:728px;
+		float:right;
+	}
+*/
+#wrapper-animals {
+	width:880px;
+	height:390px;
+
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;	/* On older OS versions "position" and "z-index" must be defined, */
+	z-index:1;			/* it seems that recent webkit is less picky and works anyway. */
+	overflow:hidden;
+
+	background:#b6e0ef;
+	-webkit-border-radius:14px;
+	border:2px solid #000;
+}
+
+#scroller-animals {
+	width:6400px;
+	height:100%;
+	float:left;
+	padding:0;
+}
+
+#scroller-animals ul {
+	list-style:none;
+	display:block;
+	float:left;
+	width:100%;
+	height:100%;
+	padding:0;
+	margin:0;
+	text-align:left;
+}
+
+#scroller-animals li {
+	-webkit-box-sizing:border-box;
+	display:block; float:left;
+	width:880px; height:390px;
+	text-align:center;
+	font-family:georgia;
+	font-size:18px;
+	line-height:140%;
+	
+	/*margin-left:10px;*/
+	
+}
+
+#indicator-animals {
+	padding:6px;
+
+	width:88px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#indicator-animals > li {
+	float:left;
+	text-indent:-9999em;
+	width:8px; height:8px;
+	-webkit-border-radius:4px;
+	background:#ddd;
+	overflow:hidden;
+	margin-right:4px;
+}
+
+#indicator-animals > li.active {
+	background:yellow;
+}
+
+#indicator-animals > li:last-child {
+	margin:0;
+}
+
+/**/
+#wrapper-decor {
+	width:880px;
+	height:390px;
+
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;	/* On older OS versions "position" and "z-index" must be defined, */
+	z-index:1;			/* it seems that recent webkit is less picky and works anyway. */
+	overflow:hidden;
+
+	background:#b6e0ef;
+	-webkit-border-radius:14px;
+	border:2px solid #000;
+}
+
+#scroller-decor {
+	width:6400px;
+	height:100%;
+	float:left;
+	padding:0;
+}
+
+#scroller-decor ul {
+	list-style:none;
+	display:block;
+	float:left;
+	width:100%;
+	height:100%;
+	padding:0;
+	margin:0;
+	text-align:left;
+}
+
+#scroller-decor li {
+	-webkit-box-sizing:border-box;
+	display:block; float:left;
+	width:880px; height:390px;
+	text-align:center;
+	font-family:georgia;
+	font-size:18px;
+	line-height:140%;
+	
+	/*margin-left:10px;*/
+	
+}
+
+#indicator-decor {
+	padding:6px;
+
+	width:88px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#indicator-decor > li {
+	float:left;
+	text-indent:-9999em;
+	width:8px; height:8px;
+	-webkit-border-radius:4px;
+	background:#ddd;
+	overflow:hidden;
+	margin-right:4px;
+}
+
+#indicator-decor > li.active {
+	background:yellow;
+}
+
+#indicator-decor > li:last-child {
+	margin:0;
+}
+
+
+/**/
+ul.thelist li{
+	padding:0;
+}
+.nav {
+	margin-left:auto;
+	margin-right:auto;
+}
+/*
+#prev, #next {
+	float:left;
+	font-weight:bold;
+	font-size:14px;
+	padding:5px 0;
+	width:80px;
+}*/
+
+.prev{
+	position:absolute;
+	width:73px;
+	height:76px;
+	top:275px;
+	left:2px;
+	background:url("_img/shop-btn-scroll-left@2x.png");
+	z-index:99999;
+}
+
+.next{
+	position:absolute;
+	width:73px;
+	height:76px;
+	top:275px;
+	right:2px;
+	background:url("_img/shop-btn-scroll-left@2x.png");
+	z-index:99999;
+	
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+#ui-panel-currency{
+	background:url("_img/shop-ui-panel-currency@2x.png");
+	width:436px;
+	height:62px;
+	float:left;
+	margin-top:8px;
+}
+.value-user-snowflake{
+	float:left;
+	font-family:"motter";
+	color: white;
+	font-size:20px;
+	letter-spacing:0.0em;
+	text-align:center;
+	text-shadow:
+	   -2px -2px 0 #000,
+	    2px -2px 0 #000,
+	   -2px  2px 0 #000,
+	    2px  2px 0 #000,
+	   -1px -2px 0 #000,
+	    1px -2px 0 #000,
+	   -1px  2px 0 #000,
+	    1px  2px 0 #000,
+	   -2px -1px 0 #000,
+	    2px -1px 0 #000,
+	   -2px  1px 0 #000,
+	    2px  1px 0 #000;
+	width:130px;
+	margin-left:5px;
+	margin-top:23px;
+}
+
+.value-user-crystal{
+	float:left;
+	font-family:"motter";
+	color: white;
+	font-size:20px;
+	letter-spacing:0.0em;
+	text-align:center;
+	text-shadow:
+	   -2px -2px 0 #000,
+	    2px -2px 0 #000,
+	   -2px  2px 0 #000,
+	    2px  2px 0 #000,
+	   -1px -2px 0 #000,
+	    1px -2px 0 #000,
+	   -1px  2px 0 #000,
+	    1px  2px 0 #000,
+	   -2px -1px 0 #000,
+	    2px -1px 0 #000,
+	   -2px  1px 0 #000,
+	    2px  1px 0 #000;
+	width:85px;
+	margin-left:6px;
+	margin-top:23px;
+}
+#btn-addcurrency{
+	float:left;
+	background:url("_img/shop-btn-addcurrency@2x.png");
+	width:94px;
+	height:62px;
+}
+.store-cell{
+	background:url("_img/shop-btn-cell@2x.png");
+	width:287px;
+	height:337px;
+	float:left;
+
+	margin-top:7px;
+}
+.store-cell-spacer{
+	background:url("_img/spacer.gif");
+	height:1px;
+	width:8px;
+	float:left;
+}
+.store-cell-name{
+	text-align:center;
+	margin-top:15px;
+	
+	font-family:"motter";
+	color: white;
+	font-size:20px;
+	letter-spacing:0.05em;
+	text-shadow:
+	   -2px -2px 0 #000,
+	    2px -2px 0 #000,
+	   -2px  2px 0 #000,
+	    2px  2px 0 #000,
+	   -1px -2px 0 #000,
+	    1px -2px 0 #000,
+	   -1px  2px 0 #000,
+	    1px  2px 0 #000,
+	   -2px -1px 0 #000,
+	    2px -1px 0 #000,
+	   -2px  1px 0 #000,
+	    2px  1px 0 #000;	
+}
+.value-animal-collection{
+	float:left;
+	font-family:"motter";
+	color: white;
+	font-size:20px;
+	letter-spacing:0.0em;
+	text-align:left;
+	text-shadow:
+	   -2px -2px 0 #000,
+	    2px -2px 0 #000,
+	   -2px  2px 0 #000,
+	    2px  2px 0 #000,
+	   -1px -2px 0 #000,
+	    1px -2px 0 #000,
+	   -1px  2px 0 #000,
+	    1px  2px 0 #000,
+	   -2px -1px 0 #000,
+	    2px -1px 0 #000,
+	   -2px  1px 0 #000,
+	    2px  1px 0 #000;
+	margin-left:45px;
+	margin-top:30px;
+	
+	width:90px;
+}
+.value-animal-cycle{
+	float:left;
+	font-family:"motter";
+	text-align:left;
+	color: white;
+	font-size:20px;
+	letter-spacing:0.0em;
+	text-shadow:
+	   -2px -2px 0 #000,
+	    2px -2px 0 #000,
+	   -2px  2px 0 #000,
+	    2px  2px 0 #000,
+	   -1px -2px 0 #000,
+	    1px -2px 0 #000,
+	   -1px  2px 0 #000,
+	    1px  2px 0 #000,
+	   -2px -1px 0 #000,
+	    2px -1px 0 #000,
+	   -2px  1px 0 #000,
+	    2px  1px 0 #000;
+	margin-left:10px;
+	margin-top:30px;
+}
+.value-animal-grow{
+	float:left;
+	font-family:"motter";
+	text-align:left;
+	color: white;
+	font-size:20px;
+	letter-spacing:0.0em;
+	text-shadow:
+	   -2px -2px 0 #000,
+	    2px -2px 0 #000,
+	   -2px  2px 0 #000,
+	    2px  2px 0 #000,
+	   -1px -2px 0 #000,
+	    1px -2px 0 #000,
+	   -1px  2px 0 #000,
+	    1px  2px 0 #000,
+	   -2px -1px 0 #000,
+	    2px -1px 0 #000,
+	   -2px  1px 0 #000,
+	    2px  1px 0 #000;
+	margin-left:25px;
+	margin-top:30px;
+	
+	
+}
+.btn-price{
+	background:url("_img/shop-btn-price@2x.png");
+	width:208px;
+	height:66px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:63px;
+}
+.icon-snowflake{
+	float:left;
+	background:url("_img/shop-icon-snowflake@2x.png");
+	margin-left:7px;
+	margin-top:7px;
+	height:50px;
+	width:50px;
+}
+.icon-crystal{
+	float:left;
+	background:url("_img/shop-icon-crystal@2x.png");
+	margin-left:7px;
+	margin-top:7px;
+	height:50px;
+	width:50px;
+}
+.price{
+	float:left;
+	width:132px;
+	margin-left:5px;
+	margin-top:22px;
+	
+	font-family:"motter";
+	text-align:center;
+	color: white;
+	font-size:20px;
+	letter-spacing:0.0em;
+	text-shadow:
+	   -2px -2px 0 #000,
+	    2px -2px 0 #000,
+	   -2px  2px 0 #000,
+	    2px  2px 0 #000,
+	   -1px -2px 0 #000,
+	    1px -2px 0 #000,
+	   -1px  2px 0 #000,
+	    1px  2px 0 #000,
+	   -2px -1px 0 #000,
+	    2px -1px 0 #000,
+	   -2px  1px 0 #000,
+	    2px  1px 0 #000;
+}
+.item-animal{
+	width:288px;
+	height:210px;
+} 
+.polarbear{
+	background:url("_img/animal-polarbear@2x.png");
+}
+
+</style>
+</head>
+
+<body>
+
+
+	<script type="text/javascript" src="_scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="_scripts/iscroll.js"></script>	
+	
+	
+	<script type="text/javascript">
+	var animalsshop;
+	var decorshop;
+	var islandsshop;
+	var specialshop;
+
+	function loaded() {
+		animalsshop = new iScroll('wrapper-animals', {
+			snap: 'li',
+			momentum: false,
+			hScrollbar: false,
+			onScrollEnd: function () {
+				document.querySelector('#indicator-animals > li.active').className = '';
+				document.querySelector('#indicator-animals > li:nth-child(' + (this.currPageX+1) + ')').className = 'active';
+			}
+		 });
+		
+		decorshop = new iScroll('wrapper-decor', {
+			snap: 'li',
+			momentum: false,
+			hScrollbar: false,
+			onScrollEnd: function () {
+				document.querySelector('#indicator-decor > li.active').className = '';
+				document.querySelector('#indicator-decor > li:nth-child(' + (this.currPageX+1) + ')').className = 'active';
+			}
+		 });
+	}
+	
+	document.addEventListener('DOMContentLoaded', loaded, false);
+	</script>
+	<script type="text/javascript"> 
+
+	$(document).ready(function() {
+
+		//Default Action
+		$(".store-content").hide(); //Hide all content
+		$("ul.tabs li:first").addClass("active").show(); //Activate first tab
+		$(".store-content:first").show(); //Show first tab content
+
+		//On Click Event
+		$("ul.tabs li").click(function() {
+			$("ul.tabs li").removeClass("active"); //Remove any "active" class
+			$(this).addClass("active"); //Add "active" class to selected tab
+			$(".store-content").hide(); //Hide all tab content
+			var activeTab = $(this).find("a").attr("href"); //Find the rel attribute value to identify the active tab + content
+			$(activeTab).fadeIn(); //Fade in the active content
+			
+			
+			// <div class="nav">
+			// 	<ul id="indicator-decor">
+			// 		<li class="active">1</li>
+			// 		<li>2</li>
+			// 		<li>3</li>
+			
+			//GREG
+			setTimeout(function () {
+			    animalsshop.refresh();
+			    decorshop.refresh();
+			    islandsshop.refresh();
+			    specialshop.refresh();
+			
+				$("ul.tabs li");
+			   }, 0);
+			
+			
+			return false;
+		});
+
+	});
+	</script>
+	
+	
+	<div class="container">
+		
+		<div id="header">
+			<div id="shop-ui-panel-left"><div class="username">Zombie Island</div></div>
+			<div id="banner-iphone"></div><div id="banner-ipad"></div>
+		</div>
+	
+	    <div class="store-container"> 
+	        <div id="tab1" class="store-content"> 
+	         	<div id="wrapper-animals">
+					<div id="scroller-animals">
+						<ul class="thelist">
+							<li>
+								<div class="store-cell-spacer"></div>
+								<div class="store-cell">
+									<div class="store-cell-name">Polar Bear</div>
+									<div class="item-animal polarbear"></div>
+									<span class="value-animal-collection">9,000</span>
+									<span class="value-animal-cycle">30d</span>
+									<span class="value-animal-grow">30d</span>
+									<div class="btn-price">
+										<div class="icon-snowflake"></div>
+										<span class="price">8,888,000</span>
+									</div>
+								</div>
+								<div class="store-cell">
+									<div class="store-cell-name">Polar Bear</div>
+									<div class="item-animal polarbear"></div>
+									<span class="value-animal-collection">9,000</span>
+									<span class="value-animal-cycle">30d</span>
+									<span class="value-animal-grow">30d</span>
+									<div class="btn-price">
+										<div class="icon-snowflake"></div>
+										<span class="price">8,888,000</span>
+									</div>
+								</div>
+								<div class="store-cell">
+									<div class="store-cell-name">Polar Bear</div>
+									<div class="item-animal polarbear"></div>
+									<span class="value-animal-collection">9,000</span>
+									<span class="value-animal-cycle">30d</span>
+									<span class="value-animal-grow">30d</span>
+									<div class="btn-price">
+										<div class="icon-snowflake"></div>
+										<span class="price">8,888,000</span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="store-cell-spacer"></div>
+								<div class="store-cell">
+									<div class="store-cell-name">Polar Bear</div>
+									<div class="item-animal polarbear"></div>
+									<span class="value-animal-collection">9,000</span>
+									<span class="value-animal-cycle">30d</span>
+									<span class="value-animal-grow">30d</span>
+									<div class="btn-price">
+										<div class="icon-snowflake"></div>
+										<span class="price">8,888,000</span>
+									</div>
+								</div>
+								<div class="store-cell">
+									<div class="store-cell-name">Polar Bear</div>
+									<div class="item-animal polarbear"></div>
+									<span class="value-animal-collection">9,000</span>
+									<span class="value-animal-cycle">30d</span>
+									<span class="value-animal-grow">30d</span>
+									<div class="btn-price">
+										<div class="icon-snowflake"></div>
+										<span class="price">8,888,000</span>
+									</div>
+								</div>
+								<div class="store-cell">
+									<div class="store-cell-name">Polar Bear</div>
+									<div class="item-animal polarbear"></div>
+									<span class="value-animal-collection">9,000</span>
+									<span class="value-animal-cycle">30d</span>
+									<span class="value-animal-grow">30d</span>
+									<div class="btn-price">
+										<div class="icon-snowflake"></div>
+										<span class="price">8,888,000</span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="store-cell-spacer"></div>
+								<div class="store-cell">
+									<div class="store-cell-name">Polar Bear</div>
+									<div class="item-animal polarbear"></div>
+									<span class="value-animal-collection">9,000</span>
+									<span class="value-animal-cycle">30d</span>
+									<span class="value-animal-grow">30d</span>
+									<div class="btn-price">
+										<div class="icon-snowflake"></div>
+										<span class="price">8,888,000</span>
+									</div>
+								</div>
+								<div class="store-cell">
+									<div class="store-cell-name">Polar Bear</div>
+									<div class="item-animal polarbear"></div>
+									<span class="value-animal-collection">9,000</span>
+									<span class="value-animal-cycle">30d</span>
+									<span class="value-animal-grow">30d</span>
+									<div class="btn-price">
+										<div class="icon-snowflake"></div>
+										<span class="price">8,888,000</span>
+									</div>
+								</div>
+								<div class="store-cell">
+									<div class="store-cell-name">Polar Bear</div>
+									<div class="item-animal polarbear"></div>
+									<span class="value-animal-collection">9,000</span>
+									<span class="value-animal-cycle">30d</span>
+									<span class="value-animal-grow">30d</span>
+									<div class="btn-price">
+										<div class="icon-snowflake"></div>
+										<span class="price">8,888,000</span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="store-cell-spacer"></div>
+								<div class="store-cell">
+									<div class="store-cell-name">Polar Bear</div>
+									<div class="item-animal polarbear"></div>
+									<span class="value-animal-collection">9,000</span>
+									<span class="value-animal-cycle">30d</span>
+									<span class="value-animal-grow">30d</span>
+									<div class="btn-price">
+										<div class="icon-snowflake"></div>
+										<span class="price">8,888,000</span>
+									</div>
+								</div>
+								<div class="store-cell">
+									<div class="store-cell-name">Polar Bear</div>
+									<div class="item-animal polarbear"></div>
+									<span class="value-animal-collection">9,000</span>
+									<span class="value-animal-cycle">30d</span>
+									<span class="value-animal-grow">30d</span>
+									<div class="btn-price">
+										<div class="icon-snowflake"></div>
+										<span class="price">8,888,000</span>
+									</div>
+								</div>
+								<div class="store-cell">
+									<div class="store-cell-name">Polar Bear</div>
+									<div class="item-animal polarbear"></div>
+									<span class="value-animal-collection">9,000</span>
+									<span class="value-animal-cycle">30d</span>
+									<span class="value-animal-grow">30d</span>
+									<div class="btn-price">
+										<div class="icon-snowflake"></div>
+										<span class="price">8,888,000</span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="store-cell-spacer"></div>
+								<div class="store-cell">
+									<div class="store-cell-name">Polar Bear</div>
+									<div class="item-animal polarbear"></div>
+									<span class="value-animal-collection">9,000</span>
+									<span class="value-animal-cycle">30d</span>
+									<span class="value-animal-grow">30d</span>
+									<div class="btn-price">
+										<div class="icon-snowflake"></div>
+										<span class="price">8,888,000</span>
+									</div>
+								</div>
+								<div class="store-cell">
+									<div class="store-cell-name">Polar Bear</div>
+									<div class="item-animal polarbear"></div>
+									<span class="value-animal-collection">9,000</span>
+									<span class="value-animal-cycle">30d</span>
+									<span class="value-animal-grow">30d</span>
+									<div class="btn-price">
+										<div class="icon-snowflake"></div>
+										<span class="price">8,888,000</span>
+									</div>
+								</div>
+								<div class="store-cell">
+									<div class="store-cell-name">Polar Bear</div>
+									<div class="item-animal polarbear"></div>
+									<span class="value-animal-collection">9,000</span>
+									<span class="value-animal-cycle">30d</span>
+									<span class="value-animal-grow">30d</span>
+									<div class="btn-price">
+										<div class="icon-snowflake"></div>
+										<span class="price">8,888,000</span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="store-cell-spacer"></div>
+								<div class="store-cell">
+									<div class="store-cell-name">Polar Bear</div>
+									<div class="item-animal polarbear"></div>
+									<span class="value-animal-collection">9,000</span>
+									<span class="value-animal-cycle">30d</span>
+									<span class="value-animal-grow">30d</span>
+									<div class="btn-price">
+										<div class="icon-snowflake"></div>
+										<span class="price">8,888,000</span>
+									</div>
+								</div>
+								<div class="store-cell">
+									<div class="store-cell-name">Polar Bear</div>
+									<div class="item-animal polarbear"></div>
+									<span class="value-animal-collection">9,000</span>
+									<span class="value-animal-cycle">30d</span>
+									<span class="value-animal-grow">30d</span>
+									<div class="btn-price">
+										<div class="icon-snowflake"></div>
+										<span class="price">8,888,000</span>
+									</div>
+								</div>
+								<div class="store-cell">
+									<div class="store-cell-name">Polar Bear</div>
+									<div class="item-animal polarbear"></div>
+									<span class="value-animal-collection">9,000</span>
+									<span class="value-animal-cycle">30d</span>
+									<span class="value-animal-grow">30d</span>
+									<div class="btn-price">
+										<div class="icon-snowflake"></div>
+										<span class="price">8,888,000</span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="store-cell-spacer"></div>
+								<div class="store-cell">
+									<div class="store-cell-name">Polar Bear</div>
+									<div class="item-animal polarbear"></div>
+									<span class="value-animal-collection">9,000</span>
+									<span class="value-animal-cycle">30d</span>
+									<span class="value-animal-grow">30d</span>
+									<div class="btn-price">
+										<div class="icon-snowflake"></div>
+										<span class="price">8,888,000</span>
+									</div>
+								</div>
+								<div class="store-cell">
+									<div class="store-cell-name">Polar Bear</div>
+									<div class="item-animal polarbear"></div>
+									<span class="value-animal-collection">9,000</span>
+									<span class="value-animal-cycle">30d</span>
+									<span class="value-animal-grow">30d</span>
+									<div class="btn-price">
+										<div class="icon-snowflake"></div>
+										<span class="price">8,888,000</span>
+									</div>
+								</div>
+								<div class="store-cell">
+									<div class="store-cell-name">Polar Bear</div>
+									<div class="item-animal polarbear"></div>
+									<span class="value-animal-collection">9,000</span>
+									<span class="value-animal-cycle">30d</span>
+									<span class="value-animal-grow">30d</span>
+									<div class="btn-price">
+										<div class="icon-snowflake"></div>
+										<span class="price">8,888,000</span>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="prev" onclick="animalsshop.scrollToPage('prev', 0);return false"></div>
+				<div class="next" onclick="animalsshop.scrollToPage('next', 0);return false"></div>
+				<div class="nav">
+					<ul id="indicator-animals">
+						<li class="active">1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+						<li>6</li>
+						<li>7</li>
+					</ul>
+				</div>
+					   
+	        </div> 
+	        <div id="tab2" class="store-content"> 
+					<div id="wrapper-decor">
+							<div id="scroller-decor">
+								<ul class="thelist">
+									<li>
+										<div class="store-cell-spacer"></div>
+										<div class="store-cell">
+											<div class="store-cell-name">Polar Bear</div>
+										</div>
+										<div class="store-cell">
+											<div class="store-cell-name">Polar Bear</div>
+										</div>
+										<div class="store-cell">
+											<div class="store-cell-name">Polar Bear</div>
+										</div>
+									</li>
+									<li>
+										<div class="store-cell-spacer"></div>
+										<div class="store-cell">
+											hi
+										</div>
+										<div class="store-cell">
+											hi
+										</div>
+										<div class="store-cell">
+											hi
+										</div>
+									</li>
+									<li>STORE 3</li>
+									<li>STORE 4</li>
+									<li>STORE 5</li>
+									<li>STORE 6</li>
+									<li>STORE 7</li>
+								</ul>
+							</div>
+						</div>
+						<div class="prev" onclick="decorshop.scrollToPage('prev', 0);return false"></div>
+						<div class="next" onclick="decorshop.scrollToPage('next', 0);return false"></div>
+						<div class="nav">
+							<ul id="indicator-decor">
+								<li class="active">1</li>
+								<li>2</li>
+								<li>3</li>
+								<li>4</li>
+								<li>5</li>
+								<li>6</li>
+								<li>7</li>
+							</ul>
+						</div>
+	        </div> 
+	        <div id="tab3" class="store-content"> 
+	            TAB 3 CONTENT
+	        </div> 
+	        <div id="tab4" class="store-content"> 
+	         	TAB 4 CONTENT
+	        </div>
+	    </div>
+	<br style="clear:both;">
+		<div id="ui-panel-currency">
+			<div class="icon-snowflake"></div>
+			<span class="value-user-snowflake">9,000,000</span>
+			<div class="icon-crystal"></div>
+			<span class="value-user-crystal">9,000</span>
+			<a id="btn-addcurrency" href="#"></a>
+		</div>
+		<ul class="tabs"> 
+		    <li class="animals"><a href="#tab1">&nbsp;</a></li> 
+		    <li class="decor"><a href="#tab2">&nbsp;</a></li> 
+		    <li class="islands"><a href="#tab3">&nbsp;</a></li> 
+		    <li class="special"><a href="#tab4">&nbsp;</a></li> 
+			<li class="back"><a href="javascriptpt:close();">&nbsp;</a></li> 
+		</ul>
+		<a href="#"><img style="margin-left:12px;" src="_img/btn-freesnowflakes@2x.png"></a>
+		
+	</div> 
+	
+	
+</body>
+
+</html>
